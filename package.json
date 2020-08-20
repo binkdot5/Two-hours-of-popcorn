@@ -1,0 +1,19 @@
+{
+  "name": "two-hours-of-popcorn",
+  "version": "1.0.0",
+  "description": "two hours of popcorn is a movie spa built using Vue/Mongo/Express/Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binkdot5/Two-Hours-of-Popcorn.git"
+  },
+  "author": "Karan Bindal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binkdot5/Two-Hours-of-Popcorn/issues"
+  },
+  "homepage": "https://github.com/binkdot5/Two-Hours-of-Popcorn#readme"
+}
