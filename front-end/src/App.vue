@@ -28,7 +28,7 @@ export default {
   created() {
     var vm = this;
     axios
-      .get("http://localhost:3000/api/movies")
+      .get("/api/movies")
       .then(function(response) {
         vm.movies = response.data;
         // console.log(vm.movies);

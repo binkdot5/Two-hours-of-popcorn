@@ -15,7 +15,7 @@ router.get('/api/movies', function(req, res, next) {
   movie.find(function(err, movies){
     if(err) return next(err);
     res.json(movies);
-  })
+  });
 });
 
 /* Get by 'id' API route */
@@ -23,7 +23,7 @@ router.get('/api/movie/:id', function(req, res, next) {
   movie.findById(req.params.id, function(err, movie){
     if(err) return next(err);
     res.json(movie);
-  })
+  });
 });
 
 module.exports = router;

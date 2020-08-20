@@ -97,4 +97,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//handle production
+if(process.env.NODE_ENV === 'prodcution') {
+  //Static
+  app.use(express.static(__dirname + '/public/'));
+
+  //Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
+
 module.exports = app;
