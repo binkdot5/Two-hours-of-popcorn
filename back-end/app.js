@@ -81,6 +81,15 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//handle production
+if(process.env.NODE_ENV === 'prodcution') {
+  //Static
+  app.use(express.static(__dirname + '/public/'));
+
+  //Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -96,14 +105,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-//handle production
-if(process.env.NODE_ENV === 'prodcution') {
-  //Static
-  app.use(express.static(__dirname + '/public/'));
-
-  //Handle SPA
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
-}
 
 module.exports = app;
